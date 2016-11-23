@@ -6,16 +6,19 @@ var Weather = require('Weather');
 var About = require('About');
 var Examples = require('Examples');
 
-//load foundation
-require('style!css!foundation-sites/dist/foundation.min.css');
+// Load foundation
+require('style!css!foundation-sites/dist/foundation.min.css')
 $(document).foundation();
+
+// app css
+require('style!css!applicationStyles');
 
 ReactDOM.render(
   <Router history={hashHistory}>
     <Route path="/" component={Main}>
-      <Route path="about" component={About}></Route>
-      <Route path="example" component={Examples}></Route>
-      <IndexRoute component={Weather} />
+      <Route path="about" component={About}/>
+      <Route path="examples" component={Examples}/>
+      <IndexRoute component={Weather}/>
     </Route>
   </Router>,
   document.getElementById('app')
